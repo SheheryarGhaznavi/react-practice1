@@ -10,9 +10,27 @@
 
 
     <!-- Scripts -->
-    <script src="https://fb.me/react-0.14.3.js"></script>
-    <script src="https://fb.me/JSXTransformer-0.14.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/JSXTransformer.js"></script>
     <!-- Scripts -->
+    
+    <!-- React.js -->
+    <script type="text/jsx">
+    
+        var Counter = React.createClass({
+
+            render: function() {
+                return (
+                    <div> Hello World </div>
+                )
+            }
+
+        })
+
+        React.render(<Counter />, document.body);
+
+    </script>
+    <!-- React.js -->
     
 </body>
 </html>
