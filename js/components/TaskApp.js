@@ -1,0 +1,41 @@
+var TaskApp = React.createClass({
+
+    getInitialState: function() {
+        return {
+            tasks: [],
+            task: ' '
+        }
+    },
+
+    onChange: function(e) {
+        var task = e.target.value;
+        this.setState({ task });
+    },
+
+    onSubmit: function(e) {
+        e.preventDefault();
+
+        var tasks = this.state.tasks.concat([this.state.task]);
+        var task = ' ';
+
+        this.setState({ tasks , task });
+    },
+
+    render: function () {
+    
+        return (
+            <div>
+                <h1>My Task</h1>
+                <TaskList items={this.state.tasks} />
+
+                <form onSubmit={this.onSubmit} >
+                    <input onChange={this.onChange} value={this.state.task} />
+                    <button>Add Task</button>
+                </form>
+            </div>
+        );
+
+    }
+})
+
+React.render(<TaskApp /> , document.body);
