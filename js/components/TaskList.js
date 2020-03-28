@@ -2,7 +2,7 @@ var TaskList = React.createClass({
 
     render: function () {
     
-        var displayTask = task => <li>{task}</li>
+        var displayTask = (task,index) => <li>{task} <button onClick={() => this.props.delete(index)}>Delete</button> </li>
 
         return (
             <ul>

@@ -7,6 +7,12 @@ var TaskApp = React.createClass({
         }
     },
 
+    delete: function(index) {
+        var tasks = this.state.tasks;
+        tasks.splice(index,1);
+        this.setState({ tasks });
+    },
+
     onChange: function(e) {
         var task = e.target.value;
         this.setState({ task });
@@ -26,7 +32,7 @@ var TaskApp = React.createClass({
         return (
             <div>
                 <h1>My Task</h1>
-                <TaskList items={this.state.tasks} />
+                <TaskList delete={this.delete} items={this.state.tasks} />
 
                 <form onSubmit={this.onSubmit} >
                     <input onChange={this.onChange} value={this.state.task} />
